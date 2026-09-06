@@ -208,55 +208,150 @@
 ## システム構成
 
 ```text
-ユーザー
-   ↓
-Webブラウザ
-   ↓
-HTML / CSS / JavaScript
-   ↓
-Django（Python）
-   ↓
-SQLite
-   ↓
-iTunes Search API
+                ユーザー
+                   ↓
+              Webブラウザ
+                   ↓
+        HTML / CSS / JavaScript
+                   ↓
+            Django（Python）
+              ↙          ↘
+             ↓            ↓
+          SQLite      iTunes Search API
+        （データ保存）    （楽曲検索）
+
 ```
 
 ## ER図
 
 ```text
-┌──────────────┐
-│     User     │
-├──────────────┤
-│ id           │
-│ username     │
-│ email        │
-│ password     │
-└──────┬───────┘
-       │
-       │ 1
-       │
-       │ N
-┌──────▼───────┐
-│    Score     │
-├──────────────┤
-│ id           │
-│ user_id      │
-│ song_id      │
-│ score        │
-│ key          │
-│ created_at   │
-└──────┬───────┘
-       │
-       │ N
-       │
-       │ 1
-┌──────▼───────┐
-│     Song     │
-├──────────────┤
-│ id           │
-│ title        │
-│ artist       │
-└──────────────┘
+                              ┌──────────────────────┐
+                              │        Song          │
+                              ├──────────────────────┤
+                              │ PK id                │
+                              │ track_name            │
+                              │ artist_name           │
+                              │ album_name             │
+                              │ artwork_url            │
+                              │ preview_url            │
+                              │ genre                  │
+                              │ lyrics                 │
+                              └───────┬──────┬────────┘
+                                      │      │
+                         1            │      │            N
+                                      │      │
+                         N            │      │            1
+                    ┌─────────────────┘      └─────────────────┐
+                    │                                          │
+          ┌─────────▼─────────┐                       ┌─────────▼──────────┐
+          │     ScoreLog      │                       │    SongHistory     │
+          ├───────────────────┤                       ├────────────────────┤
+          │ PK id             │                       │ PK id              │
+          │ FK user           │                       │ FK user            │
+          │ FK song           │                       │ FK song             │
+          │ key               │                       │ viewed_at           │
+          │ score             │                       └────────────────────┘
+          │ karaoke_type      │
+          │ image             │
+          │ created_at        │
+          └─────────┬─────────┘
+                    │
+                    │ N
+                    │
+                    │ 1
+              ┌─────▼──────┐
+              │    User    │
+              ├────────────┤
+              │ PK id      │
+              │ username   │
+              │ email      │
+              │ points     │
+              │ catchphrase│
+              │ theme      │
+              │ bio        │
+              │ avatar     │
+              │ is_public  │
+              └────┬──┬────┘
+                   │  │
+          ┌────────┘  └──────────────┐
+          │                          │
+         N│                          │N
+          │                          │
+   ┌──────▼───────┐          ┌───────▼──────────┐
+   │  SongLater   │          │ PurchasedCatchphrase │
+   ├──────────────┤          ├───────────────────┤
+   │ PK id        │          │ PK id             │
+   │ FK user      │          │ FK user           │
+   │ FK song      │          │ catchphrase       │
+   │ created_at   │          │ created_at        │
+   └──────────────┘          └───────────────────┘
+
+
+User N ───────────── N Song
+       （favorites）
+
+
+User N ───────────── N ChatRoom
+       （participants）
+
+                         ┌──────────────────┐
+                         │     ChatRoom     │
+                         ├──────────────────┤
+                         │ PK id            │
+                         │ name             │
+                         │ created_at       │
+                         └────────┬─────────┘
+                                  │
+                                 1│
+                                  │
+                                 N│
+                         ┌────────▼─────────┐
+                         │     Message      │
+                         ├──────────────────┤
+                         │ PK id            │
+                         │ FK room          │
+                         │ FK sender        │
+                         │ content          │
+                         │ image            │
+                         │ created_at       │
+                         └──────────────────┘
+
+
+┌─────────────────────┐
+│   MonthlyMission    │
+├─────────────────────┤
+│ PK id               │
+│ title               │
+│ goal                │
+│ month               │
+│ reward_points       │
+└──────────┬──────────┘
+           │ 1
+           │
+           │ N
+┌──────────▼──────────┐
+│ UserMissionProgress │
+├─────────────────────┤
+│ PK id               │
+│ FK user              │
+│ FK mission           │
+│ progress             │
+│ reward_received      │
+│ is_completed         │
+└──────────┬──────────┘
+           │
+           │ N
+           │
+           │ 1
+          User
+
+
+User 1 ───────── N Friendship
+User 1 ───────── N Friendship
+
+User 1 ───────── N FriendRequest
+User 1 ───────── N FriendRequest
+
 ```
 
 ## 画面一覧
