@@ -1055,6 +1055,10 @@ span.nav-link-left.active-link {
     display: block;
 }
 
+.chat-messages p {
+    color: black;
+}
+
 /* ============================ */
 /* ranking.html */
 /* ============================ */

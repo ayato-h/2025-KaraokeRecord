@@ -231,18 +231,30 @@ PostgreSQL
 
 # 画面一覧
 
-【スクリーンショットを貼る】
 
-例
+### ログイン画面
+<img src="docs/images/login.png" width="400">
 
-- ログイン画面
-- ホーム画面
-- 曲検索画面
-- 点数登録画面
-- 分析画面
-- フレンド画面
-- チャット画面
-- 設定画面
+### ホーム画面
+<img src="docs/images/home.png" width="400">
+
+### 曲検索画面
+<img src="docs/images/search.png" width="400">
+
+### 点数登録画面
+<img src="docs/images/score.png" width="400">
+
+### 分析画面
+<img src="docs/images/analysis.png" width="400">
+
+### フレンド画面
+<img src="docs/images/friends.png" width="400">
+
+### チャット画面
+<img src="docs/images/chat.png" width="400">
+
+### 設定画面
+<img src="docs/images/settings.png" width="400">
 
 <br>
 
