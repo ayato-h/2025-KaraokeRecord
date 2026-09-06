@@ -1,4 +1,4 @@
-# <img src="appproject/app/static/app/img/logo_readme.png" width="100" style="vertical-align: middle;"> カラオケ点数記録アプリ
+# <img src="appproject/app/static/app/img/logo.png" width="70" style="vertical-align: middle;"> カラオケ点数記録アプリ
 
 ## 目次
 
