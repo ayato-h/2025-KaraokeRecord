@@ -232,29 +232,22 @@ PostgreSQL
 # 画面一覧
 
 
-### ログイン画面
-<img src="docs/images/login.png" width="400">
+| ログイン | ホーム | 曲検索 |
+|:---:|:---:|:---:|
+| <img src="docs/images/login.png" width="250"> | <img src="docs/images/home.png" width="250"> | <img src="docs/images/search.png" width="250"> |
 
-### ホーム画面
-<img src="docs/images/home.png" width="400">
+| 点数記録 | 分析・可視化 | アカウント |
+|:---:|:---:|:---:|
+| <img src="docs/images/score.png" width="250"> | <img src="docs/images/analysis.png" width="250"> | <img src="docs/images/account.png" width="250"> |
 
-### 曲検索画面
-<img src="docs/images/search.png" width="400">
+| クイズ | 曲数計算 | 履歴 |
+|:---:|:---:|:---:|
+| <img src="docs/images/quiz.png" width="250"> | <img src="docs/images/calc.png" width="250"> | <img src="docs/images/history.png" width="250"> |
 
-### 点数登録画面
-<img src="docs/images/score.png" width="400">
+| フレンド | チャット | 設定 |
+|:---:|:---:|:---:|
+| <img src="docs/images/friends.png" width="250"> | <img src="docs/images/chat.png" width="250"> | <img src="docs/images/settings.png" width="250"> |
 
-### 分析画面
-<img src="docs/images/analysis.png" width="400">
-
-### フレンド画面
-<img src="docs/images/friends.png" width="400">
-
-### チャット画面
-<img src="docs/images/chat.png" width="400">
-
-### 設定画面
-<img src="docs/images/settings.png" width="400">
 
 <br>
 
