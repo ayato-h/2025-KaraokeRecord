@@ -58,29 +58,27 @@
 <details>
 <summary> 会員登録・ログイン</summary>
 
-ユーザー登録・ログイン機能を実装しています。
-
 - メールアドレスによる認証
 - パスワード認証
 - パスワード再設定
+
+　ユーザー登録・ログインができます。
 
 </details>
 
 <details>
 <summary> 曲検索</summary>
 
-歌いたい曲を検索できます。
-
 - 曲名から検索
 - アーティスト名から検索
 - 外部APIを利用した楽曲検索
+
+　曲名やアーティスト名から、歌いたい曲を検索できます。
 
 </details>
 
 <details>
 <summary> 点数記録</summary>
-
-カラオケで歌った曲の点数を記録できます。
 
 - 曲名
 - アーティスト名
@@ -88,14 +86,12 @@
 - キー
 - 歌唱日
 
-などの情報を保存できます。
+　カラオケで歌った曲の点数や歌唱情報を記録できます。
 
 </details>
 
 <details>
 <summary> 分析・可視化</summary>
-
-記録した点数をもとに、自分の歌唱データを分析できます。
 
 - 平均点
 - 安定度
@@ -103,77 +99,79 @@
 - 点数の推移
 - 成長グラフ
 
+　記録した点数をもとに、歌唱データを分析・可視化できます。
+
 </details>
 
 <details>
-<summary>🎵 曲管理</summary>
-
-歌いたい曲やお気に入りの曲を管理できます。
+<summary>曲管理</summary>
 
 - お気に入り登録
 - 後で歌う曲の登録
 - 登録曲の管理
+
+　お気に入りや後で歌いたい曲をまとめて管理できます。
 
 </details>
 
 <details>
 <summary> クイズ機能</summary>
 
-音楽を聴いて曲名を当てる4択クイズに挑戦できます。
+　音楽を聴いて曲名を当てる4択クイズに挑戦できます。
 
 </details>
 
 <details>
 <summary> 曲数計算機能</summary>
 
-カラオケの人数と利用時間から、1人あたりに歌える曲数などを計算できます。
+　カラオケの人数と利用時間から、1人あたりに歌える曲数を計算できます。
 
-さらに、お気に入り曲からおすすめ曲を提案します。
+　さらに、お気に入り曲からおすすめの曲を提案します。
 
 </details>
 
 <details>
 <summary> 継続機能</summary>
 
-継続して利用したくなる仕組みを用意しています。
-
 - 月間ミッション
 - ポイント制度
 - 称号機能
+
+　ミッションやポイント、称号を通して、継続して利用できる仕組みを用意しています。
 
 </details>
 
 <details>
 <summary> フレンド機能</summary>
 
-ユーザー同士でつながり、歌唱記録を共有できます。
-
 - ユーザー検索
 - フレンド追加
 - プロフィール閲覧
 - フレンドランキング
+
+　ユーザー同士でつながり、歌唱記録を通じて交流できます。
 
 </details>
 
 <details>
 <summary> チャット機能</summary>
 
-フレンド同士でメッセージをやり取りできます。
-
 - テキスト送信
 - 画像送信
 - メッセージ取り消し
+
+　フレンド同士でテキストや画像を使ってメッセージをやり取りできます。
 
 </details>
 
 <details>
 <summary> 設定</summary>
 
-アプリの各種設定を変更できます。
-
 - ダークモード / ライトモード
 - 日本語 / 英語切替
 - プロフィール公開設定
+
+　アプリの表示やプロフィールに関する各種設定を変更できます。
 
 </details>
 
@@ -229,14 +227,14 @@
                               │        Song          │
                               ├──────────────────────┤
                               │ PK id                │
-                              │ track_name            │
-                              │ artist_name           │
-                              │ album_name             │
-                              │ artwork_url            │
-                              │ preview_url            │
-                              │ genre                  │
-                              │ lyrics                 │
-                              └───────┬──────┬────────┘
+                              │ track_name           │
+                              │ artist_name          │
+                              │ album_name           │
+                              │ artwork_url          │
+                              │ preview_url          │
+                              │ genre                │
+                              │ lyrics               │
+                              └───────┬──────┬───────┘
                                       │      │
                          1            │      │            N
                                       │      │
@@ -248,8 +246,8 @@
           ├───────────────────┤                       ├────────────────────┤
           │ PK id             │                       │ PK id              │
           │ FK user           │                       │ FK user            │
-          │ FK song           │                       │ FK song             │
-          │ key               │                       │ viewed_at           │
+          │ FK song           │                       │ FK song            │
+          │ key               │                       │ viewed_at          │
           │ score             │                       └────────────────────┘
           │ karaoke_type      │
           │ image             │
@@ -277,14 +275,14 @@
           │                          │
          N│                          │N
           │                          │
-   ┌──────▼───────┐          ┌───────▼──────────┐
+   ┌──────▼───────┐          ┌───────▼──────────────┐
    │  SongLater   │          │ PurchasedCatchphrase │
-   ├──────────────┤          ├───────────────────┤
-   │ PK id        │          │ PK id             │
-   │ FK user      │          │ FK user           │
-   │ FK song      │          │ catchphrase       │
-   │ created_at   │          │ created_at        │
-   └──────────────┘          └───────────────────┘
+   ├──────────────┤          ├──────────────────────┤
+   │ PK id        │          │ PK id                │
+   │ FK user      │          │ FK user              │
+   │ FK song      │          │ catchphrase          │
+   │ created_at   │          │ created_at           │
+   └──────────────┘          └──────────────────────┘
 
 
 User N ───────────── N Song
@@ -333,11 +331,11 @@ User N ───────────── N ChatRoom
 │ UserMissionProgress │
 ├─────────────────────┤
 │ PK id               │
-│ FK user              │
-│ FK mission           │
-│ progress             │
-│ reward_received      │
-│ is_completed         │
+│ FK user             │
+│ FK mission          │
+│ progress            │
+│ reward_received     │
+│ is_completed        │
 └──────────┬──────────┘
            │
            │ N
